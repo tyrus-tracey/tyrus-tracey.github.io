@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import parse from 'html-react-parser';
 import DOMPurify from 'dompurify';
 
-export default function ReflectList({courseid, coursename, rawsummary}) {
+export default function ReflectListItem({courseid, coursename, rawsummary}) {
     const cleansummary = DOMPurify.sanitize(rawsummary);
     
     return (

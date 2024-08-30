@@ -1,28 +1,42 @@
-import ReflectList from "./ReflectList";
-import { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import { Link } from "react-router-dom";
 
-export default function ReflectSemester({semester, year}) {
-    const [courses, setCourses] = useState([]);
+/*
+Displays the semester name, and for each containing course the course name + blurb.
 
-    useEffect(() => {
-        const LoadCourseData = async () => {
-            const response = (await axios.get(`/reflections/${year}/${semester}`)).data;
-            setCourses(response);
-        }
-        LoadCourseData();
-    }, []);
+Input:
+    A JSON array of semseters (of a given year).
+    Each semester element has a name prop, and a sub-array of courses.
 
+*/
+export default function ReflectSemester({semesters}) {
     return ( 
-        <div>
-        <h1>{semester} {year}</h1>
-        {courses.map(course =>
-            <ReflectList 
-                courseid={course.courseid}
-                coursename={course.coursename} 
-                rawsummary={course.summary} 
-            />
-        )}
-        </div>
+        <>
+            {semesters.map((semester, index) => (
+                <div 
+                    key={index}
+                    className="tl-semester"
+                >
+                    <div className="tl-semester-label">
+                        <h3>{semester.name}</h3>
+                    </div>
+                    <div className="tl-semester-classes">
+                    {semester.courses.map((course) => (
+                        <div key={course.courseid} >
+                            <Link className="reflect-list-item" to={`/reflect/${course.courseid}`}>
+                                <div className="tl-class" style={{
+                                    backgroundImage:'url("/coursepictures/' + course.courseid + '.jpg")',
+                                    backgroundSize:'cover',
+                                    overflow: 'hidden'
+                                }}>
+                                    <h3>{course.courseName}</h3>
+                                    <div style={{textAlign:'right', paddingRight:'40px'}}><h2>{course.courseid}</h2></div>
+                                </div>
+                            </Link><br />
+                        </div>
+                    ))}
+                    </div>
+                </div>
+            ))}
+        </>
     ) ;
 }

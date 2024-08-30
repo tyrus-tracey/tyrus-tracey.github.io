@@ -2,63 +2,341 @@ html {
   overflow-y: auto;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  overflow-y: auto;
+@font-face {
+  font-family: 'Rubik Mono One';
+  src: url('./assets/fonts/RubikMonoOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-button {
-  padding: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
+@font-face {
+  font-family: 'test';
+  src: url('./assets/fonts/VagabondedOutline.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Akira';
+  src: url('./assets/fonts/Akira.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Comorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-Bold.ttf') format('truetype');
+  /* src: url('./assets/fonts/CormorantGaramond-BoldItalic.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-Light.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-LightItalic.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-Medium.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+  src: url('./assets/fonts/CormorantGaramond-SemiBoldItalic.ttf') format('truetype'); */
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Play';
+  src: url('assets/fonts/Play-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Gruppo';
+  src: url('assets/fonts/Gruppo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('assets/fonts/helvetica-neu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+#root {
+  background: rgb(30,30,30);
+}
+
+html, body {
+  overscroll-behavior-y: none;
+}
+
+
+.App {
+  margin: 0 auto;
+  max-width: 1920px;
+  height: 100vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.dimmer {
+  display: none;
+}
+
+#page-body {
+  height: 100%;
+  padding: 30px;
+  flex-grow: 1;
+  background-image:linear-gradient(rgb(30,30,30) 30%, 90%, rgb(60,60,60)); 
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-body-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#page-body p {
+  padding-right: 75px;
+}
+
+body {
+  background: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: lightgray;
+  overflow: hidden;
 }
 
 h3, h4 {
   margin-bottom: 0;
 }
 
-nav {
-  border-bottom: 4px solid black;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
+#page-body a {
+  color: lightgreen;
+  text-decoration-line: none;
 }
 
-nav ul {
-  list-style-type: none;
+#page-body a:hover {
+  color: lightgoldenrodyellow;
+}
+
+.nav-root, .nav-root-close {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+  width: fit-content;
+  background:rgb(30,30,30);
+  box-shadow: 5px, 5px, 5px, 5px, white;
+  z-index: 5;
+  transition: 100ms ease;
+  overflow: hidden;
+}
+
+.nav-root-close {
+  transition: 100ms ease;
+  visibility: hidden;
+  max-width: 0;
+}
+
+.nav-homebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 50px;
+  padding-top: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-bottom: 100px;
+  width: 50px;
+  flex-basis: 50px;
+  height: 100vh;
+  background-image: linear-gradient(90deg, transparent 90%, black 100%), url(./assets/pictures/black-perf-tile.png);
+  overflow: hidden;
+}
+
+.nav-homebar-nameplate {
+  font-family: Akira;
+  writing-mode:vertical-rl;
+  transform: rotate(180deg);
+  margin-top: 50px;
+  margin-bottom: auto;
+  width: 100%;
+  text-wrap:nowrap;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nav-homebar-nameplate h3 {
+  color: rgb(30,30,30);
+  font-size: 28px;
+  text-shadow: 2px 2px black;
+  text-align: center;
   margin: 0;
+  margin-right: 8px;
+  padding: 0;
+  -webkit-text-fill-color: rgb(150,150,150);
+  -webkit-text-stroke: 1px;
+}
+
+
+.nav-homebar-button, #button-close {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.nav-homebar-button img {
+  margin: 0 auto;
   padding: 0;
 }
 
+.nav-homebar-button:hover, #button-close:hover {
+  box-shadow: 0px 0px 10px rgba(255,255,255, 0.7);
+}
+
+.nav-homebar-button:active, #button-close:active {
+  box-shadow: inset 0px 0px 2px rgba(0,0,0, 1);
+  padding: 5px 5px;
+}
+
+.nav-homebar-button:active img, #button-close:active img{
+  opacity: 60%;
+}
+
+#button-github {
+  background: linear-gradient(rgba(255, 255, 255, 0.35) 10%, transparent 30%), #3f2c3f;
+}
+
+#button-linkedin {
+  background: linear-gradient(rgba(255, 255, 255, 0.35) 10%, transparent 30%), #2871aa;
+}
+
+#button-mail {
+  margin-bottom: 50px;
+  background: linear-gradient(rgba(255, 255, 255, 0.35) 10%, transparent 30%), #c39500;
+}
+
+#button-close {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(rgba(255, 255, 255, 0.35) 10%, transparent 30%), #990000;
+  box-shadow: 0 0 8px rgba(0,0,0,1);
+  z-index: 5;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background:
+    linear-gradient(
+      200deg,
+      transparent 80%,
+      rgba(255, 255, 255, 0.2) 100%
+    ),
+    linear-gradient(
+    90deg,
+    rgb(100,100,100) 0%,  
+    rgb(30, 30, 30) 3%,
+    rgb(30, 30, 30) 97%,
+    rgb(100,100,100) 100%
+    );
+  overflow: hidden;
+  width: 200px;
+  flex-basis: 200px;
+}
+
+.nav-profile {
+  margin: 20px auto;
+  display: flex;
+  width: 150px;
+  height: 150px; 
+  outline: 2px solid rgb(40,40,40);
+  border: 5px solid rgb(60,60,60);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+nav ul {
+  position: relative;
+  margin: 0 auto;
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+nav ul::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, transparent 10%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.4) 31%,transparent 21%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+}
+
 nav li {
-  display: inline-block;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  background: linear-gradient(90deg, slategray 0%, black 3%, black 98%, slategray 99%); 
+  width: 100%;
+  text-align: right;
+  border-top: 1px outset #F5F5F5;
+  border-bottom: 3px outset #F5F5F5;
+  font-family: 'Akira';
+  font-size: 18px;
+  overflow: hidden;
+}
+
+nav li:hover {
+  background: linear-gradient(90deg, slategray 0%, rgb(60, 60, 60) 3%, rgb(60, 60, 60) 98%, slategray 99%); 
+}
+
+nav li:active {
+  border-top: 1px outset rgb(100,100,100);
+  border-bottom: 3px outset #c4c4c4;
+  background: linear-gradient(90deg, slategray 0%, rgb(30, 30, 30) 3%, rgb(30, 30, 30) 98%, slategray 99%); 
+}
+
+nav li h3 {
+  margin: 0px auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: black;
+  width: 100%;
+  color: rgb(150,150,150);
   font-weight: bold;
-  padding: 24px 32px;
-}
-
-nav a:hover {
-  background: black;
-  color: white;
-}
-
-#page-body {
-  max-width: 700px;
-  margin: auto;
-  padding-top: 72px;
 }
 
 .reflect-list-item {
@@ -75,48 +353,297 @@ nav a:hover {
   padding-bottom: 32px;
 }
 
-#add-comment-form {
-  border-bottom: 2px solid black;
-  padding: 16px;
-}
-
-#add-comment-form h3 {
-  margin-bottom: 16px;
-}
-
-input, textarea {
-  display: block;
-  width: 300px;
-  padding: 8px;
-  border-radius: 8px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 18px;
-  border: 2px solid black;
-  margin-bottom: 16px;
-}
-
-.error {
-  padding: 8px;
-  border-radius: 4px;
-  background-color: pink;
-}
-
-#add-comment-form button {
-  width: 320px;
-}
-
-#upvotes-section button, p {
-  display: inline-block;
-  margin-right: 16px;
-}
-
-.comment {
-  border-bottom: 2px solid black;
-  padding: 16px;
-}
-
 .nav-right {
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+
+/* TIMELINE 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline {
+  width: 100%;
+  overflow: hidden;
+  display: inline;
+}
+
+.time-wrapper {
+  margin-right: 30px;
+  width: 100px;
+  max-width: 100px;
+  top: 0px;
+  align-self: flex-start;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  line-height: 0.9;
+  z-index: 1;
+}
+
+.time-wrapper h1 {
+  font-family: Comorant Garamond;
+  font-size: 60px;
+}
+
+.tl-year {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.tl-year h3 {
+  font-size: 2rem;
+  line-height: 1;
+  margin: 15px 0;
+}
+
+.tl-semester {
+  margin-top: 50px;
+  padding-left: 20px;
+  padding-right: 40px;
+  border-left: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  max-width: 700px;
+}
+
+.tl-semester-label {
+  padding-top: 50px;
+  margin-right: 30px;
+  writing-mode: sideways-lr;
+  text-align: right;
+}
+
+.tl-semester-label h3 {
+  font-family: Coromant Garamond;
+  font-size: 36px;
+}
+
+.tl-semester-classes {
+  display: flex;
+  flex-direction: column;
+}
+
+.tl-class {
+  position:relative;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 600px;
+  background-color: rgb(30,30,30);
+  border-style: solid;
+  border-color: rgb(100,100,100);
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+  z-index:0;
+}
+
+.tl-class::after {
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  content:"";
+  position:absolute;
+  z-index: 1;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+}
+
+.tl-class h2 {
+  position: relative;
+  display: inline;
+  text-align: right;
+  font-family: test;
+  font-size: 50px;
+  color: rgb(220,220,220);
+  z-index: 5;
+}
+
+.tl-class h3 {
+  position: relative;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  padding-left: 10px;
+  color: rgb(220,220,220);
+  z-index: 5;
+}
+
+/* WORK
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.work-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+#Prometric {
+  background: white;
+  font-family: "Cinzel";
+  font-weight: 400;
+  color: black;
+}
+
+#Prometric h4 {
+  font-size: 1.5em;
+}
+
+#Prometric h3 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5em;
+}
+
+#Prometric .title {
+  text-align: end !important;
+  justify-content: end !important;
+  border-bottom: 2px solid rgb(147, 232, 116);
+}
+
+#ArtificerKeycaps {
+  background: #ccc;
+  border: 5px outset rgba(255,255,255,0.5);
+  border-radius: 5px;
+  font-family: "Chakra Petch", sans-serif;
+  font-style: normal;
+}
+
+#ArtificerKeycaps h3, #ArtificerKeycaps h4, #ArtificerKeycaps h5 {
+  background-color: #565656;
+  color: transparent;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+  font-weight: 500;
+}
+
+#ArtificerKeycaps h3 {
+  font-size: 2.25em;
+  font-weight: 500;
+}
+
+#ArtificerKeycaps h4 {
+  font-size: 1.5em;
+}
+
+#ArtificerKeycaps h5 {
+  font-size: 1em;
+}
+
+#SFUCognitiveScienceLab {
+  font-family:Cambria;
+  padding: 0 !important;
+  background: #F9FBFF;
+}
+
+#SFUCognitiveScienceLab h4 {
+  font-size: 1.25em;
+  background-color: #a6192e;
+  padding:2px;
+}
+
+#SFUCognitiveScienceLab .title {
+  color: #777;
+  font-size: 1.25em;
+}
+
+#SFUCognitiveScienceLab h5 {
+  color: #a6192e;
+}
+
+/* MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media (width <= 480px) {
+  .App {
+    display: block;
+  }
+  .dimmer {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+  #page-body {
+    padding: 20px;
+  }
+  .nav-root {
+    position: absolute;
+    width: fit-content;
+  }
+  .nav-root-close {
+    display: none;
+  }
+  .nav-homebar-nameplate {
+    margin: 10px 0px auto 0px;
+  }
+  .nav-homebar-nameplate h3 {
+    font-size: 4vh;
+  }
+  .nav-homebar-button {
+    height: 40px;
+    width: 40px;
+  }
+  nav li h3 {
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px
+  }
+  .tl-year {
+    flex-direction: column;
+  }
+  .time-wrapper {
+    position: relative;
+  }
+  .time-wrapper h1 {
+    font-size: 45px;
+    padding: 0px;
+    margin: 0px;
+  }
+  .tl-semester {
+    flex-direction: column;
+  }
+  .tl-semester-label {
+    padding-top: 0;
+    writing-mode:horizontal-tb;
+    text-align:initial;
+  }
+  .tl-class {
+    width: 250px;
+    padding-right: 25px;
+  }
+  .reflection {
+    padding-right: 75px;
+  }
+  .nav-homebar-button:hover, #button-close:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,1);
+  }
+  #Prometric h3 {
+    font-size: 1.25em;
+  }
+  #Prometric h5 {
+    font-size: 0.65em;
+  }
+  #ArtificerKeycaps h3 {
+    font-size: 1.6em;
+  }
+  #ArtificerKeycaps h4 {
+    font-size: 1em;
+  }
+  #ArtificerKeycaps h5 {
+    font-size: 0.65em;
+  }
+  #SFUCognitiveScienceLab h3, #SFUCognitiveScienceLab h4 {
+    font-size: 1em;
+  }
+  #SFUCognitiveScienceLab h5 {
+    font-size: 0.7em;
+  }
 }
