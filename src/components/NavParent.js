@@ -1,21 +1,22 @@
 import NavBar from "../NavBar";
-import ArrowLogo from "../assets/icons/left-arrow.png"
+import MenuLogo from "../assets/icons/side-menu.png"
 
 
 export default function NavParent({boolOnMobile, boolIsOpen, toggleFunc}) {
     return (
         <>
-            <NavBar boolNavOpen={boolIsOpen}/>    
-            {!boolOnMobile && 
+            <NavBar isCloseable={boolOnMobile} boolNavOpen={boolIsOpen} navClose={toggleFunc}/>
+            {boolOnMobile && 
                 <button id="button-close" onClick={toggleFunc}>
-                    <img src={ArrowLogo} alt="" style={{
+                    <img src={MenuLogo} alt="" style={{
                         padding: 'auto auto',
                         width:'20px',
                         height:'20px',
                         maxWidth:'inherit', 
                         maxHeight:'inherit',  
                         objectFit: 'contain',
-                        rotate: boolIsOpen ? '0deg' : '180deg'
+                        filter: 'invert(85%)',
+                        rotate: boolIsOpen ? '180deg' : '0deg'
                     }}></img>
                 </button>
             }

@@ -29,7 +29,7 @@ export default function ReflectSemester({semesters}) {
                                     overflow: 'hidden'
                                 }}>
                                     <h3>{course.courseName}</h3>
-                                    <div style={{textAlign:'right', paddingRight:'40px'}}><h2>{course.courseid}</h2></div>
+                                    <div className="tl-class-courseid"><h2>{course.courseid}</h2></div>
                                 </div>
                             </Link><br />
                         </div>

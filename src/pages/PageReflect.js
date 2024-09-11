@@ -22,9 +22,16 @@ export default function PageReflect() {
     
     return (
     <div className="reflection">
-        <h1>{courseData.courseid}</h1>
-        <h2>{courseData.courseName}</h2>
+        <h1>{courseData.courseid}: {courseData.courseName}</h1>
         <h3>{courseData.blurb}</h3>
+        <ul style={{margin: 0}}>
+            {
+                courseData.highlights.map((highlight, index) => {
+                    return <li key={courseData.courseid+`-highlight-${index}`}>{parse(DOMPurify.sanitize(highlight))}</li>
+                })
+            }
+        </ul>
+        <hr style = {{margin: '30px'}}/>
         {parse(htmlcontent)}
     </div>
     );

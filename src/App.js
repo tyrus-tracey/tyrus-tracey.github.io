@@ -9,26 +9,33 @@ import PageNotFound     from './pages/PageNotFound.js';
 import NavParent from './components/NavParent.js';
 import { useState, useEffect } from 'react';
 
-function App() {
-  const [onMobile, setOnMobile] = useState(
-    window.matchMedia("(min-width: 480px)").matches
-  )
-
-  useEffect(() => {
-    window
-    .matchMedia("(min-width: 768px)")
-    .addEventListener('change', e => setOnMobile( e.onMobile ));
-  }, []);
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
   
-  const [isOpen, setIsOpen] = useState(onMobile);
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+    const updateMatches = (e) => setMatches(e.matches);
+
+    setMatches(mediaQueryList.matches);
+    mediaQueryList.addEventListener('change', updateMatches);
+
+    return () => mediaQueryList.removeEventListener('change', updateMatches);
+  }, [query]);
+
+  return matches;
+}
+
+function App() {
+  const onMobile = useMediaQuery("(max-width: 480px)");
+  const [isOpen, setIsOpen] = useState(!onMobile);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div className="App">
         <NavParent boolOnMobile={onMobile} boolIsOpen={isOpen} toggleFunc={toggle}/>
-        {isOpen && <div className='dimmer'></div>}
+        {isOpen && <div className='dimmer' onClick={toggle}></div>}
         <div className="page-body-flex" id="page-body-flex">
-          <div id="page-body">
+          <div className = "page-body" id="page-body">
               <Routes>
                 <Route path="/"                       element={<PageHome />} />
                 <Route path="/work"                   element={<PageWork/>}/>

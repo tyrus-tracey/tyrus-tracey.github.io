@@ -4,15 +4,14 @@ import NavProfile from './components/NavProfile';
 //import GlossAngled from './components/GlossAngled';
 
 
-export default function NavBar({boolNavOpen}) {
+export default function NavBar({isCloseable, boolNavOpen, navClose}) {
 
     return (
         <div className={boolNavOpen ? "nav-root" : "nav-root-close"}>
             <NavHomeBar/>
             <nav>
                 <NavProfile/>
-                
-                    <ul>
+                    <ul onClick={isCloseable? navClose: null}>
                         <Link to="/"        ><li key='navhome'><h3>Home</h3></li></Link>
                         <Link to="/work"><li key='work'><h3>Work</h3></li></Link>
                         <Link to="/projects"><li key='projects'><h3>Projects</h3></li></Link>
