@@ -24,7 +24,7 @@ export default function PageReflect() {
     <div className="reflection">
         <h1>{courseData.courseid}: {courseData.courseName}</h1>
         <h3>{courseData.blurb}</h3>
-        <ul style={{margin: 0}}>
+        <ul style={{margin: 0, marginTop: '5px'}}>
             {
                 courseData.highlights.map((highlight, index) => {
                     return <li key={courseData.courseid+`-highlight-${index}`}>{parse(DOMPurify.sanitize(highlight))}</li>
