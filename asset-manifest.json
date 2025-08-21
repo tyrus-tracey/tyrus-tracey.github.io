@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.06342bae.css",
-    "main.js": "/static/js/main.4150322e.js",
+    "main.js": "/static/js/main.7d1cfbf2.js",
     "reactPlayerYouTube.js": "/static/js/reactPlayerYouTube.86a3b230.chunk.js",
     "reactPlayerSoundCloud.js": "/static/js/reactPlayerSoundCloud.cdebb4dc.chunk.js",
     "reactPlayerVimeo.js": "/static/js/reactPlayerVimeo.2bda9fe1.chunk.js",
@@ -22,7 +22,6 @@
     "static/media/Play-Regular.ttf": "/static/media/Play-Regular.e0424c5771f87080b05e.ttf",
     "static/media/Gruppo-Regular.ttf": "/static/media/Gruppo-Regular.6651b7e098ca04e57596.ttf",
     "static/media/RubikMonoOne-Regular.woff": "/static/media/RubikMonoOne-Regular.03ed5480a68775abbeaf.woff",
-    "static/media/snektest.jpg": "/static/media/snektest.0c323ef6b8d8185b3cea.jpg",
     "static/media/VagabondedOutline.otf": "/static/media/VagabondedOutline.7ffe8222faccfa8a8eee.otf",
     "static/media/Akira.otf": "/static/media/Akira.5198553380d9bb727554.otf",
     "static/media/helvetica-neu.ttf": "/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
@@ -30,7 +29,7 @@
     "index.html": "/index.html",
     "static/media/GitHub_Invertocat_Dark.svg": "/static/media/GitHub_Invertocat_Dark.a3af591c495dc631d60657e740e2572a.svg",
     "main.06342bae.css.map": "/static/css/main.06342bae.css.map",
-    "main.4150322e.js.map": "/static/js/main.4150322e.js.map",
+    "main.7d1cfbf2.js.map": "/static/js/main.7d1cfbf2.js.map",
     "reactPlayerYouTube.86a3b230.chunk.js.map": "/static/js/reactPlayerYouTube.86a3b230.chunk.js.map",
     "reactPlayerSoundCloud.cdebb4dc.chunk.js.map": "/static/js/reactPlayerSoundCloud.cdebb4dc.chunk.js.map",
     "reactPlayerVimeo.2bda9fe1.chunk.js.map": "/static/js/reactPlayerVimeo.2bda9fe1.chunk.js.map",
@@ -49,6 +48,6 @@
   },
   "entrypoints": [
     "static/css/main.06342bae.css",
-    "static/js/main.4150322e.js"
+    "static/js/main.7d1cfbf2.js"
   ]
 }
