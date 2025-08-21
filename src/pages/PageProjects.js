@@ -1,4 +1,3 @@
-import TestImg from '../assets/pictures/snektest.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import ReactPlayer from 'react-player';
@@ -21,6 +20,30 @@ export default function PageProjects() {
       return (
         <Carousel infiniteLoop swipeable showIndicators={false} showStatus={false} showThumbs={false}>
             <Slide descHTML=
+                '<a href="https://thecdm.ca/projects/big-country-phase-2-campervan-life-tidepool-games"><h3>Tidepool Games - Big Country</h3></a><p>Cozy Camper Van Customization</p>'
+            >
+                <ReactPlayer 
+                    style={{margin: '0 auto'}} 
+                    width= {isMobile? '100%' : '50%'} 
+                    height='50%'
+                    url="/trailers/BigCountryTrailer.mp4" 
+                    controls 
+                    light={<img src="/thumbnails/thumb-bc.png" alt="" width="100%" height="100%"/>}
+                />
+            </Slide>
+            <Slide descHTML=
+                '<a href="https://github.com/tyrus-tracey/cmpt461-geomlogotool"><h3>Physically-based Compositing of 2D Graphics</h3></a><p>The insert tool you always wished for.</p>'
+            >
+                <ReactPlayer 
+                    style={{margin: '0 auto'}} 
+                    width= {isMobile? '100%' : '50%'} 
+                    height='50%'
+                    url="/trailers/natlogoinsertion.mp4" 
+                    controls 
+                    light={<img src="/thumbnails/thumb-ferrari.jpg" alt="" width="100%" height="100%"/>}
+                />
+            </Slide>
+            <Slide descHTML=
                 '<a href="https://github.com/tyrus-tracey/arkanoidclone"><h3>Vortex</h3></a><p>Explosive Brick-breaking Action!</p>'
             >
                 <ReactPlayer 
@@ -31,15 +54,6 @@ export default function PageProjects() {
                     controls 
                     light={<img src="/thumbnails/thumb-brek.png" alt="" width="100%" height="100%"/>}
                 />
-            </Slide>
-            <Slide descHTML="<h3>Immersive-sim Prototype</h3>">
-                <div style={{margin: '0 auto', background:'white', width:'45%', height: '45%'}}>
-                    <h4>In Progress...</h4>
-                    <h5>Check back soon!</h5>
-                </div>
-            </Slide>
-            <Slide descHTML="<h3>TurboSnake</h3>">
-                <img src={TestImg} alt="" height="200" width="200"/>
             </Slide>
         </Carousel>
       );
