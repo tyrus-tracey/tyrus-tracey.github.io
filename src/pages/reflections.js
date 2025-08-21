@@ -81,8 +81,40 @@ semesters : [
             `]
         }
         ]
+    },
+    {
+        name: "Summer",
+        courses: [
+        {
+            courseid: "CMPT493",
+            courseName: "Digital Media Practicum",
+            blurb: "",
+            highlights: [
+                `Worked with Tidepool Games as my client`,
+                `Created new gameplay features for an Unreal Engine 5 game`,
+                `Befriended a bunch of developers, artists, and animators :)`
+            ],
+            content: [`
+                test content...
+            `]
+        },
+        {
+            courseid: "CMPT376W",
+            courseName: "Professional Responsibility and Technical Writing",
+            blurb: "Those attendance marks really do count",
+            highlights: [
+                `A very light introduction into basic ethical theories`,
+                `Wrote a paper examining AI and religion`,
+                `Not much else!`
+            ],
+            content: [`
+                I didn't expect a whole lot from this, as this is really one of two required W-credit courses and CS students aren't exactly known for being great writers. Given that the professor really emphasized ethics in the beginning of the course, I was hoping we'd have deeper discussions on controversial topics surrounding technology. For reference, when I took PSYC300W, the professor <i>encouraged</i> us to pick a stance and defend it, which I enjoyed as it made assignments a lot more interesting.<br/><br/>
+                As for the ethical theories examined, it was very introductory level stuff with utilitarianism, kantianism, etc. Again, I imagine this class is probably the first time most of the students applied an ethical framework, but I was hoping we'd dig a little deeper into more modern ideas.<br/><br/>
+                So, frankly not a whole lot to write about here. You take the course cause you need it to graduate. The workload is very light though, so you can definitely load up with other UD courses.
+            `]
+        }
+        ]
     }
-
 ]
 },
 {
