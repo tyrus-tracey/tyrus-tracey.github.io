@@ -11,11 +11,22 @@ semesters : [
             blurb: "Best 6 UD credits for your buck",
             highlights: [
                 `Worked with Tidepool Games as my client`,
-                `Created new gameplay features for an Unreal Engine 5 game`,
+                `Designed new gameplay features for an Unreal Engine 5 game`,
                 `Befriended a bunch of developers, artists, and animators :)`
             ],
             content: [`
-                test content...
+                I had heard about this program from a friend of mine and had kinda applied on a whim - I didn't know what projects I could be working on, but it all sounded pretty cool and could count towards my upper division credits. It wasn't until the first day arriving their that I finally got to learn that my client would be Tidepool Games, a local Vancouver indie studio, and I would be part of a team working on building their flagship title Big Country. This is an outdoor exploration game set in the 90s where the main character Maya travels through interior BC in her camper van, alongside her dog Otter.<br/><br/>
+                That first day was wild. Just to preface, the MDM is a ~2-year program for students in art, animation, development, UX/UI, etc. to take their skills to the next level. As a visiting student from SFU or UBC, you're joining in on their capstone project. So when you arrive, you're suddenly part of a whole community of students of all backgrounds. You make a bunch of friends really quickly! <br/><br/>
+                As for our project, our goal was to bring the camper van to life with a customization system: help it turn into a cozy place of refuge from the outer wilds. This meant new editing functions, quality of life improvements, and the integration of brand-new assets that the art team would produce to really give the van a lived-in appearance. This also included integrating brand-new animations of Maya inside the van to sell the idea that she is truly living in it.<br/><br/>
+                My main role was working on the object placement system: allowing players to furnish their van by dragging objects from an inventory panel. While it sounds straightforward, there's a ridiculous amount of edge cases if you want to build a system that gives true player freedom. On top of that, there's a lot of math work under the hood when it comes to projection, rotation, translation, alignment, etc. Good thing I was never afraid of some linear algebra!<br/><br/>
+                I also got some good experience in working with Unreal Engine's material system.  In Unreal Engine, mesh components (i.e. the 3D model) are given material instances, which dictate their texturing and shading details. Material instances are derived from materials in a class-like hierarchy which allows multiple models to inherit from the same base material. This is helpful for building material functionality that can applied to all models of this base material. We wanted to be able to swap texture information (which is stored in material instances) at runtime, so we needed our objects to use the same base material. We consulted with the artists to define this hierarchy and the names of the parameters that would be used across all derived material instances. By defining the “Color” parameter in our base material (which is where texture information goes), we can edit this in all derived material instances:<br/>
+                <img src="misc/mat_diagram.png"></img>
+                <br/><br/>
+                And the results speak for themselves, which you can check out on <a href="https://tyrus-tracey.github.io/#/projects">my projects page</a>.<br/><br/>
+                Now I had an amazing time here, but for SFU/UBC students interested in taking this program, there's some things you should know.<br/><br/>
+                First, you won't know anything about your project until the day you arrive. While CDM do take your interests into account when choosing what project you'll join, you just never know for sure exactly what you're getting into. I dunno, some risk involved there.<br/><br/>
+                The second is that while visiting students (i.e. me) are expected to be there for 2 days a week, but the reality is that if you want to make a real impact, you're gonna need to work more than that. I was lucky that my only other course was CMPT376W so I could really just focus on this for much of my time. So just beware of that if your courseload is looking a little stacked.<br/><br/>
+                Oh and three, <b>be social!</b> There's so many interesting things going on here and you gotta take advantage of it. Make friends! Join events! Getting to know the students here was tons of fun, and its cool to see the other various projects come to fruitition. Not to mention, if you're interested in working in the entertainment industry, you will for sure run into CDM alumni.
             `]
         },
         {
