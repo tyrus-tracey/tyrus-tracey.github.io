@@ -26,7 +26,7 @@ export default function ReflectSemester({semesters}) {
                                 <div className="tl-class" style={{
                                     backgroundImage:'url("/coursepictures/' + course.courseid + '.jpg")',
                                     backgroundSize:'cover',
-                                    overflow: 'hidden'
+                                    overflow: 'hidden',
                                 }}>
                                     <h3>{course.courseName}</h3>
                                     <div className="tl-class-courseid"><h2>{course.courseid}</h2></div>
