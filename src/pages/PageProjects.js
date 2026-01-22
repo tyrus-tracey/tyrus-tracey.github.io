@@ -32,7 +32,7 @@ export default function PageProjects() {
                 />
             </Slide>
             <Slide descHTML=
-                '<a href="https://github.com/tyrus-tracey/cmpt461-geomlogotool"><h3>Physically-based Compositing of 2D Graphics</h3></a><p>The insert tool you always wished for.</p>'
+                '<a href="https://yaksoy.github.io/2DGraphicsComp/"><h3>Physically-based Compositing of 2D Graphics</h3></a><p>The insert tool you always wished for.</p>'
             >
                 <ReactPlayer 
                     style={{margin: '0 auto'}} 

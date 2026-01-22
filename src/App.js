@@ -37,7 +37,7 @@ function App() {
         <div className="page-body-flex" id="page-body-flex">
           <div className = "page-body" id="page-body">
               <Routes>
-                <Route path="/"                       element={<PageHome />} />
+                <Route path="/"                       element={<PageHome/>} />
                 <Route path="/work"                   element={<PageWork/>}/>
                 <Route path="/reflections"            element={<PageCourseTimeline/>} />
                 <Route path="/reflect/:urlcourseid"   element={<PageReflect/>} />

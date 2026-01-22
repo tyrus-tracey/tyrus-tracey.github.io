@@ -16,7 +16,7 @@ semesters : [
             ],
             content: [`
             No word of a lie, this has been the most difficult course I've ever taken. I came in feeling pretty confident since I was fresh on my linear algebra and multi-variable calculus, but I ended up getting humbled when it came to probability. This was especially a problem for the second assignment where we had to derive distributions to solve for entropy and bias-variance in Bayesian regression. My takeaway was to start reading <a href="https://probml.github.io/pml-book/book1.html">Probabilistic Machine Learning</a> in my spare time.<br/><br/>
-            The flipside was that I got to really go in-depth into some mathematically dense topics. I finally got to learn about SVD (which I first heard about in an excellent lecture about eigenanalysis at SIGGRAPH) and how singular values relate to issues of vanishing/exploding gradients. SVMs were explained as a series of relatively simple algebraic tricks, followed by a conversion into a dual problem in order to exploit the kernel trick. What's that, you may ask?<br/><br/>
+            The flipside was that I got to really go in-depth into some mathematically dense topics. I finally got to learn about SVD (which I first learned in an <a href="https://dl.acm.org/doi/full/10.1145/3721241.3733993">excellent lecture about eigenanalysis at SIGGRAPH</a>) and how singular values relate to issues of vanishing/exploding gradients. SVMs were explained as a series of relatively simple algebraic tricks, followed by a conversion into a dual problem in order to exploit the kernel trick. What's that, you may ask?<br/><br/>
             In the primal form of SVM, we have a set of inequality constraints for the distance of each datapoint from the margin (i.e. all points must be at or beyond the margin), which we optimize by minimizing the margin parameters.<br/><br/>
             <math display="block">
             <munder>
@@ -371,7 +371,7 @@ semesters : [
             courseName: "Computational Photography and Image Manipulation",
             blurb: "Absolutely worth the 8:30AM start time.",
             highlights: [
-                `I'm presenting my semester project at SIGGRAPH!!!`,
+                `I'm presenting my semester project at <a href="https://s2025.conference-schedule.org/presentation/?id=pos_227&sess=sess404">SIGGRAPH!!!</a>`,
                 `Studied and implemented texture quilting and Poisson blending`,
                 `Conducted a literature review on this rapidly-evolving field`
             ],
@@ -399,7 +399,7 @@ semesters : [
             I must say, the results are quite something. Here's an example of it in action:<br/><br/>
             <img src="misc/ferrari_result.png" style="width: 100%"></img><br/><br/>
             Despite the many doubts I had over the semester, the project ended up a great success. It opened my eyes on the kinds of image editing techniques that are now possible with bleeding-edge tech. What I wasn't expecting was that SIGGRAPH would also find this valuable: I'm going to be presenting this project at the 2025 conference! At the start of the semester I thought this was beyond a remote possibility, but now it's happning for real. All the hair-pulling moments and stress-induced 1:00AM nights was not for naught after all!<br/><br/>
-            When presentation materials will be finalized I will be sure to share them here. If you are attending SIGGRAPH 2025, do stop by to say hello!<br/><br/>
+            When presentation materials will be finalized I will be sure to share them here EDIT: <a href="https://yaksoy.github.io/2DGraphicsComp/">link!!</a>. Thank you to everyone who attended the sessions!!<br/><br/>
             As for advice on this course, what you get is <b>entirely dependent on you.</b> If you're at all not confident in programming, reading papers, or keeping a consistent work ethic, you're likely going to find yourself suffering through a project you either don't find interesting, or feel way out of your depth trying to implement. As someone who's been there before, it's a highly unpleasant place to be in. <b>Absolutely do not commit to this course on a whim.</b><br/><br/>
             But if you do decide to take this course, spend extra time on project direction. Focus on what you find cool, because your personal interests are what keeps the project engaging through the inevitable rough patches.
             `]
