@@ -142,6 +142,25 @@ h3, h4 {
   color: lightgoldenrodyellow;
 }
 
+/* HOME
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.home-container {
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  overflow-x: visible;
+  justify-content: space-evenly;
+}
+
+.home-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit:scale-down;
+}
 
 /* NAV 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
